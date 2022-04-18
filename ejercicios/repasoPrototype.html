@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>herencia prototipal</h1>
+
+    <script>
+      function Animal(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+
+      Animal.prototype.sonar = function () {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      };
+      Animal.prototype.saludar = function () {
+        console.log(`me llamo ${this.nombre}`);
+      };
+
+      const snoopy = new Animal("Snoopy", "Macho"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+      console.log(snoopy);
+      console.log(lolaBunny);
+      snoopy.sonar();
+      snoopy.saludar();
+      lolaBunny.sonar();
+      lolaBunny.saludar();
+    </script>
+  </body>
+</html>
